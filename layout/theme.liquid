@@ -2,28 +2,62 @@
 <html lang="{{ request.locale.iso_code }}">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="{{ settings.accent_color }}">
+    <meta name="theme-color" content="{{ settings.color_paper }}">
     <link rel="canonical" href="{{ canonical_url }}">
-    {% if page_description %}
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+    {%- if page_description -%}
       <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
-    {% include 'meta-tags' %}
-    <title>{{ page_title }}</title>
+    {%- endif -%}
+
+    {% render 'meta-tags' %}
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..800&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
-    {{ 'theme.js' | asset_url | script_tag }}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..800&family=Caveat:wght@600;700&display=swap">
+
+    {{ 'mynrg.css' | asset_url | stylesheet_tag }}
+
+    <style>
+      :root {
+        --paper: {{ settings.color_paper }};
+        --sand: {{ settings.color_sand }};
+        --ink: {{ settings.color_ink }};
+        --cobalt: {{ settings.color_brand }};
+        --cobalt-hover: {{ settings.color_brand | color_darken: 6 }};
+        --cobalt-deep: {{ settings.color_brand_deep }};
+        --cobalt-tint: {{ settings.color_brand | color_mix: '#ffffff', 11 }};
+        --cobalt-mist: {{ settings.color_brand | color_mix: '#ffffff', 32 }};
+      }
+    </style>
+
     {{ content_for_header }}
   </head>
-  <body class="template-{{ page.template_name | replace: '.', '-' }}">
-    <a href="#main" class="sr-only">Skip to content</a>
-    {% section 'header' %}
-    <main id="main">
+
+  <body>
+    <a class="visually-hidden" href="#MainContent">Skip to content</a>
+    {% render 'icon-sprite' %}
+    {% render 'halloween-decor' %}
+
+    {% sections 'header-group' %}
+    {% render 'first-order-popup' %}
+
+    <main id="MainContent" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
-    {% section 'footer' %}
-    <div id="cart-notification" role="status" aria-hidden="true"></div>
+
+    {% sections 'footer-group' %}
+
+    <script src="{{ 'mynrg.js' | asset_url }}" defer></script>
   </body>
 </html>

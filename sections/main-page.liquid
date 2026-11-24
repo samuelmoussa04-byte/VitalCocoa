@@ -1,14 +1,18 @@
-{%- comment -%}
-  Placeholder section - to be built
-{%- endcomment -%}
-
-<div class="placeholder-section">
-  <p>Section: {{ section.id }}</p>
-</div>
+<section class="page-head">
+  <div class="wrap">
+    <h1 class="h1 h1--page">{{ page.title | escape }}</h1>
+  </div>
+</section>
+<section class="sec" style="padding-top:8px">
+  <div class="wrap">
+    <div class="rte">{{ page.content }}</div>
+  </div>
+</section>
 
 {% schema %}
 {
-  "name": "Placeholder",
+  "name": "Page content",
+  "tag": "div",
   "settings": []
 }
 {% endschema %}

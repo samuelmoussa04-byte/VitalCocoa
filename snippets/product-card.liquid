@@ -1,0 +1,19 @@
+{%- comment -%} Product card for collection and search grids. Param: card_product {%- endcomment -%}
+{%- assign price_variant = card_product.selected_or_first_available_variant -%}
+<a class="pcard" href="{{ card_product.url }}">
+  <div class="pcard__img">
+    {%- if card_product.featured_media -%}
+      {{ card_product.featured_media.preview_image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '300, 500, 800', sizes: '(min-width: 861px) 33vw, 50vw', alt: card_product.title }}
+    {%- else -%}
+      <img src="{{ 'mynrg-top-120.png' | asset_url }}" alt="{{ card_product.title | escape }}" width="1400" height="1400" loading="lazy">
+    {%- endif -%}
+  </div>
+  <span class="pcard__title">{{ card_product.title | escape }}</span>
+  <span class="pcard__price">
+    {% if card_product.price_varies %}From {% endif %}
+    {% if price_variant.price == card_product.price_min and price_variant.compare_at_price > price_variant.price %}
+      <s>{{ price_variant.compare_at_price | money }}</s>
+    {% endif %}
+    <strong>{{ card_product.price_min | money }}</strong>
+  </span>
+</a>

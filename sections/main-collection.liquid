@@ -1,14 +1,30 @@
-{%- comment -%}
-  Placeholder section - to be built
-{%- endcomment -%}
-
-<div class="placeholder-section">
-  <p>Section: {{ section.id }}</p>
-</div>
+<section class="page-head">
+  <div class="wrap">
+    <h1 class="h1 h1--page">{{ collection.title | escape }}</h1>
+    {%- if collection.description != blank -%}<div class="lede">{{ collection.description }}</div>{%- endif -%}
+  </div>
+</section>
+<section class="sec" style="padding-top:8px">
+  <div class="wrap">
+    {%- paginate collection.products by 24 -%}
+      {%- if collection.products.size > 0 -%}
+        <div class="pgrid">
+          {%- for p in collection.products -%}
+            {% render 'product-card', card_product: p %}
+          {%- endfor -%}
+        </div>
+        {%- if paginate.pages > 1 -%}<div style="margin-top:32px">{{ paginate | default_pagination }}</div>{%- endif -%}
+      {%- else -%}
+        <p class="lede">No products here yet.</p>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
 
 {% schema %}
 {
-  "name": "Placeholder",
+  "name": "Collection",
+  "tag": "div",
   "settings": []
 }
 {% endschema %}

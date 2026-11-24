@@ -12,17 +12,6 @@
           <li><a href="/pages/subscription-policy">Subscription Policy</a></li>
         </ul>
       </nav>
-      
-      <nav class="ftr__column" aria-label="Learn">
-        <h4>Learn</h4>
-        <ul>
-          <li><a href="/pages/science">The Science</a></li>
-          <li><a href="/pages/batch-results">Batch Results</a></li>
-          <li><a href="/pages/faq">FAQ</a></li>
-          <li><a href="/pages/about">About VitalCocoa</a></li>
-        </ul>
-      </nav>
-      
       <nav class="ftr__column" aria-label="Legal">
         <h4>Legal</h4>
         <ul>
@@ -30,26 +19,34 @@
           {%- if shop.terms_of_service.url != blank -%}<li><a href="{{ shop.terms_of_service.url }}">Terms of Service</a></li>{%- endif -%}
         </ul>
       </nav>
-      
       <nav class="ftr__column" aria-label="Shop">
         <h4>Shop</h4>
         <ul>
-          <li><a href="{{ routes.all_products_collection_url }}">Shop VitalCocoa</a></li>
+          <li><a href="{{ routes.all_products_collection_url }}">Shop MyNrg</a></li>
         </ul>
       </nav>
     </div>
 
     {%- if section.settings.show_wordmark -%}
-      <p class="ftr__mark" aria-hidden="true">{{ settings.footer_wordmark_1 | escape }}<span>{{ settings.footer_wordmark_2 | escape }}</span></p>
+      <p class="ftr__mark" aria-hidden="true">{{ section.settings.wordmark_1 | escape }}<span>{{ section.settings.wordmark_2 | escape }}</span></p>
     {%- endif -%}
 
     <div class="ftr__legal">
-      {%- if section.settings.show_disclaimer and settings.footer_disclaimer != blank -%}
-        <p class="ftr__disclaimer">{{ settings.footer_disclaimer | escape }}</p>
+      {%- if section.settings.disclaimer != blank -%}
+        <p class="ftr__disclaimer">{{ section.settings.disclaimer | escape }}</p>
       {%- endif -%}
       <div class="ftr__bottom">
         <span>&copy; {{ 'now' | date: '%Y' }} {{ shop.name | escape }}</span>
-        <span>{{ settings.footer_bottom_note | escape }}</span>
+        <span>{{ section.settings.bottom_note | escape }}</span>
+        {%- assign halloween_now = 'now' | date: '%s' | plus: 0 -%}
+        {%- if halloween_now < 1793941200 -%}
+          <span class="ftr__halloween">
+            <button class="halloween-egg" type="button" aria-label="Reveal a Halloween surprise" aria-expanded="false" aria-controls="HalloweenEggMessage" data-halloween-egg>
+              <svg viewBox="0 0 120 64" aria-hidden="true" focusable="false"><use href="#halloween-bat"/></svg>
+            </button>
+            <span id="HalloweenEggMessage" class="halloween-egg__message" role="status" aria-live="polite" hidden>Boo! Happy Halloween from MyNrg.</span>
+          </span>
+        {%- endif -%}
       </div>
     </div>
   </div>
@@ -60,29 +57,14 @@
   "name": "Footer",
   "tag": "div",
   "settings": [
-    {
-      "type": "header",
-      "content": "Big logo"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_wordmark",
-      "label": "Show big logo",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Legal"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_disclaimer",
-      "label": "Show FDA disclaimer",
-      "default": true
-    }
+    { "type": "header", "content": "Big logo" },
+    { "type": "checkbox", "id": "show_wordmark", "label": "Show big logo", "default": true },
+    { "type": "text", "id": "wordmark_1", "label": "First part", "default": "My" },
+    { "type": "text", "id": "wordmark_2", "label": "Colored part", "default": "Nrg" },
+    { "type": "header", "content": "Bottom" },
+    { "type": "textarea", "id": "disclaimer", "label": "Disclaimer", "default": "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Consult your healthcare provider before use if you are pregnant, nursing, taking medication (including blood thinners), or have a medical condition." },
+    { "type": "text", "id": "bottom_note", "label": "Bottom right note", "default": "Ships to the United States and Canada" }
   ],
-  "enabled_on": {
-    "groups": ["footer"]
-  }
+  "enabled_on": { "groups": ["footer"] }
 }
 {% endschema %}

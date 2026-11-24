@@ -1,14 +1,37 @@
-{%- comment -%}
-  Placeholder section - to be built
-{%- endcomment -%}
-
-<div class="placeholder-section">
-  <p>Section: {{ section.id }}</p>
-</div>
+<section class="page-head">
+  <div class="wrap">
+    <h1 class="h1 h1--page">Search</h1>
+    <form class="search-form" action="{{ routes.search_url }}" method="get" role="search">
+      <label class="visually-hidden" for="SearchInput">Search</label>
+      <input class="field" id="SearchInput" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search">
+      <button class="btn btn--blue" type="submit">Search</button>
+    </form>
+  </div>
+</section>
+<section class="sec" style="padding-top:8px">
+  <div class="wrap">
+    {%- if search.performed -%}
+      {%- if search.results_count > 0 -%}
+        <div class="pgrid">
+          {%- for item in search.results -%}
+            {%- if item.object_type == 'product' -%}
+              {% render 'product-card', card_product: item %}
+            {%- else -%}
+              <a class="pcard" href="{{ item.url }}"><span class="pcard__title">{{ item.title | escape }}</span></a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <p class="lede">No results for "{{ search.terms | escape }}".</p>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
 
 {% schema %}
 {
-  "name": "Placeholder",
+  "name": "Search",
+  "tag": "div",
   "settings": []
 }
 {% endschema %}
