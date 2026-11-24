@@ -1,0 +1,11 @@
+# Ignore directories
+refrence/
+.git/
+node_modules/
+
+# Ignore files
+.DS_Store
+.env
+.env.local
+*.log
+*.md

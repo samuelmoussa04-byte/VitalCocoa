@@ -1,0 +1,1 @@
+scopes = "write_products,write_orders,write_customers,write_themes,read_themes"
