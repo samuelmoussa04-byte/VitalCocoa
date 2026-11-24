@@ -1,0 +1,56 @@
+{
+  "general": {
+    "search": {
+      "placeholder": "Search products",
+      "submit": "Search"
+    },
+    "menu": {
+      "close": "Close menu"
+    },
+    "currency": {
+      "toggle": "Change currency",
+      "usd": "USD",
+      "cad": "CAD"
+    }
+  },
+  "header": {
+    "account": "Account",
+    "cart": "Cart",
+    "search": "Search"
+  },
+  "footer": {
+    "support": "Support",
+    "legal": "Legal",
+    "shop": "Shop",
+    "copyright": "© {{ year }} {{ shop_name }}"
+  },
+  "product": {
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "unavailable": "Unavailable",
+    "bundle_selector": "Choose your quantity",
+    "quantity": "Quantity",
+    "total_price": "Total",
+    "unit_price": "per tub",
+    "subscription": "Subscribe & Save",
+    "subscription_discount": "Save {{percent}}%",
+    "best_value": "Best Value"
+  },
+  "cart": {
+    "title": "Shopping cart",
+    "remove": "Remove",
+    "quantity": "Quantity",
+    "empty": "Your cart is empty",
+    "continue_shopping": "Continue shopping",
+    "checkout": "Checkout",
+    "free_shipping": "Free shipping unlocked",
+    "free_shipping_message": "You're {{amount}} away from free shipping"
+  },
+  "forms": {
+    "email": "Email",
+    "name": "Name",
+    "message": "Message",
+    "submit": "Submit",
+    "subscribe": "Subscribe"
+  }
+}

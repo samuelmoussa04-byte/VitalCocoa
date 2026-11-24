@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "contact-form": {
+      "type": "rich-text",
+      "settings": {
+        "heading": "Contact Us",
+        "content": "<p>Have questions? We'd love to hear from you.</p>"
+      }
+    },
+    "form": {
+      "type": "rich-text"
+    }
+  },
+  "order": ["contact-form", "form"]
+}

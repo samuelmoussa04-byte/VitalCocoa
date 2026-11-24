@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "product-gallery": {
+      "type": "main-product",
+      "settings": {
+        "show_rating": true,
+        "show_bundle_selector": true,
+        "show_subscription": true
+      }
+    },
+    "product-details": {
+      "type": "product-details-accordions"
+    },
+    "sticky-atc": {
+      "type": "sticky-atc"
+    },
+    "related-products": {
+      "type": "rich-text",
+      "settings": {
+        "heading": "You might also like"
+      }
+    }
+  },
+  "order": [
+    "product-gallery",
+    "product-details",
+    "sticky-atc",
+    "related-products"
+  ]
+}

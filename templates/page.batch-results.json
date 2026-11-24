@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "batch-lookup": {
+      "type": "batch-lookup"
+    }
+  },
+  "order": ["batch-lookup"]
+}

@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "advertorial": {
+      "type": "advertorial-body"
+    }
+  },
+  "order": ["advertorial"]
+}

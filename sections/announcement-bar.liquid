@@ -1,0 +1,12 @@
+<div class="announcement" data-announcement-bar>
+  <div class="wrap">
+    <p>{{ settings.announcement_bar_text | default: 'Every batch lab-tested. Results printed on every tub.' }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": []
+}
+{% endschema %}

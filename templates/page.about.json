@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "about": {
+      "type": "rich-text"
+    }
+  },
+  "order": ["about"]
+}

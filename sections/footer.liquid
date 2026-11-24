@@ -1,0 +1,88 @@
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__top">
+      <nav class="ftr__column" aria-label="Support">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="/pages/track-your-order">Track Your Order</a></li>
+          <li><a href="/pages/contact-1">Contact Us</a></li>
+          {%- if shop.refund_policy.url != blank -%}<li><a href="{{ shop.refund_policy.url }}">Refund Policy</a></li>{%- endif -%}
+          {%- if shop.shipping_policy.url != blank -%}<li><a href="{{ shop.shipping_policy.url }}">Shipping Policy</a></li>{%- endif -%}
+          <li><a href="/pages/order-cancellation">Order Cancellation</a></li>
+          <li><a href="/pages/subscription-policy">Subscription Policy</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="ftr__column" aria-label="Learn">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="/pages/science">The Science</a></li>
+          <li><a href="/pages/batch-results">Batch Results</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+          <li><a href="/pages/about">About VitalCocoa</a></li>
+        </ul>
+      </nav>
+      
+      <nav class="ftr__column" aria-label="Legal">
+        <h4>Legal</h4>
+        <ul>
+          {%- if shop.privacy_policy.url != blank -%}<li><a href="{{ shop.privacy_policy.url }}">Privacy Policy</a></li>{%- endif -%}
+          {%- if shop.terms_of_service.url != blank -%}<li><a href="{{ shop.terms_of_service.url }}">Terms of Service</a></li>{%- endif -%}
+        </ul>
+      </nav>
+      
+      <nav class="ftr__column" aria-label="Shop">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="{{ routes.all_products_collection_url }}">Shop VitalCocoa</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    {%- if section.settings.show_wordmark -%}
+      <p class="ftr__mark" aria-hidden="true">{{ settings.footer_wordmark_1 | escape }}<span>{{ settings.footer_wordmark_2 | escape }}</span></p>
+    {%- endif -%}
+
+    <div class="ftr__legal">
+      {%- if section.settings.show_disclaimer and settings.footer_disclaimer != blank -%}
+        <p class="ftr__disclaimer">{{ settings.footer_disclaimer | escape }}</p>
+      {%- endif -%}
+      <div class="ftr__bottom">
+        <span>&copy; {{ 'now' | date: '%Y' }} {{ shop.name | escape }}</span>
+        <span>{{ settings.footer_bottom_note | escape }}</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Big logo"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_wordmark",
+      "label": "Show big logo",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Legal"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_disclaimer",
+      "label": "Show FDA disclaimer",
+      "default": true
+    }
+  ],
+  "enabled_on": {
+    "groups": ["footer"]
+  }
+}
+{% endschema %}

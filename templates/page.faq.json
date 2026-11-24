@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "faq-full": {
+      "type": "faq-accordion",
+      "settings": {
+        "preview_mode": false
+      }
+    }
+  },
+  "order": ["faq-full"]
+}

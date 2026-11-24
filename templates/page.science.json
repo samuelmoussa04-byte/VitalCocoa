@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page"
+    },
+    "science-content": {
+      "type": "rich-text"
+    }
+  },
+  "order": ["main", "science-content"]
+}

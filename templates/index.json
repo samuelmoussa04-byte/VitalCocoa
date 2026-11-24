@@ -1,0 +1,75 @@
+{
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar"
+    },
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "eyebrow": "High-flavanol cocoa",
+        "heading": "The cocoa flavanol drink you can check.",
+        "description": "{{ settings.flavanol_mg }} mg of cocoa flavanols in every serving, checked by an outside lab. Lead and cadmium results for your batch, printed on the tub. And it still tastes like real hot chocolate.",
+        "button_label": "Shop VitalCocoa",
+        "button_link": "/products/vitalcocoa-high-flavanol-cocoa",
+        "secondary_text": "See this month's lab results",
+        "secondary_link": "/pages/batch-results",
+        "trust_line": "60-day guarantee · Ships in 48 hours · No added sugar"
+      }
+    },
+    "trust-strip": {
+      "type": "trust-strip"
+    },
+    "problem-dutching": {
+      "type": "problem-dutching"
+    },
+    "verified-not-inflated": {
+      "type": "verified-not-inflated"
+    },
+    "batch-lookup": {
+      "type": "batch-lookup",
+      "settings": {
+        "compact": true
+      }
+    },
+    "how-it-works": {
+      "type": "how-it-works-steps"
+    },
+    "ritual-gallery": {
+      "type": "ritual-gallery"
+    },
+    "comparison-table": {
+      "type": "comparison-table"
+    },
+    "guarantee": {
+      "type": "guarantee"
+    },
+    "faq-preview": {
+      "type": "faq-accordion",
+      "settings": {
+        "preview_mode": true,
+        "item_count": 6
+      }
+    },
+    "reviews-slot": {
+      "type": "reviews-app-slot"
+    },
+    "email-capture": {
+      "type": "email-capture"
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "hero",
+    "trust-strip",
+    "problem-dutching",
+    "verified-not-inflated",
+    "batch-lookup",
+    "how-it-works",
+    "ritual-gallery",
+    "comparison-table",
+    "guarantee",
+    "faq-preview",
+    "reviews-slot",
+    "email-capture"
+  ]
+}

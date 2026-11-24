@@ -1,0 +1,8 @@
+{
+  "type": "footer",
+  "blocks": {
+    "footer": {
+      "type": "footer"
+    }
+  }
+}

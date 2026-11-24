@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="{{ settings.accent_color }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+    {% include 'meta-tags' %}
+    <title>{{ page_title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..800&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'theme.js' | asset_url | script_tag: defer: true }}
+    {% block head %}{% endblock %}
+    {{ content_for_header }}
+  </head>
+  <body class="template-{{ page.template_name | replace: '.', '-' }}">
+    <a href="#main" class="sr-only">Skip to content</a>
+    {% section 'header' %}
+    <main id="main">
+      {{ content_for_layout }}
+    </main>
+    {% section 'footer' %}
+    <div id="cart-notification" role="status" aria-hidden="true"></div>
+  </body>
+</html>

@@ -1,0 +1,153 @@
+{%- assign logo_height = section.settings.logo_height | default: 28 -%}
+{%- assign logo_style = 'height: ' | append: logo_height | append: 'px; width: auto;' -%}
+
+{%- if localization.country.iso_code == 'CA' -%}
+  {%- assign target_country_code = 'US' -%}
+  {%- assign target_currency = 'USD' -%}
+{%- else -%}
+  {%- assign target_country_code = 'CA' -%}
+  {%- assign target_currency = 'CAD' -%}
+{%- endif -%}
+
+{%- assign us_available = false -%}
+{%- assign ca_available = false -%}
+{%- for country in localization.available_countries -%}
+  {%- if country.iso_code == 'US' -%}
+    {%- assign us_available = true -%}
+  {%- elsif country.iso_code == 'CA' -%}
+    {%- assign ca_available = true -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign show_currency_switch = false -%}
+{%- if settings.show_currency_switch and us_available and ca_available -%}
+  {%- if localization.country.iso_code == 'US' or localization.country.iso_code == 'CA' -%}
+    {%- assign show_currency_switch = true -%}
+  {%- endif -%}
+{%- endif -%}
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <nav class="hdr__nav" aria-label="Main">
+      {%- for link in section.settings.menu.links -%}
+        <a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title | escape }}</a>
+      {%- endfor -%}
+    </nav>
+    
+    <button class="hdr__icon hdr__menu" type="button" data-menu-toggle aria-expanded="false" aria-label="Open menu">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24">
+        <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    
+    <a class="logo" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }} home">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 600 | image_tag: alt: shop.name, style: logo_style, loading: 'eager' }}
+      {%- else -%}
+        {{ settings.logo_text_1 | escape }}<span>{{ settings.logo_text_2 | escape }}</span>
+      {%- endif -%}
+    </a>
+    
+    <div class="hdr__end">
+      {%- if show_currency_switch -%}
+        {%- form 'localization', id: 'CurrencyForm', class: 'hdr__currency-form' -%}
+          <input type="hidden" name="country_code" value="{{ target_country_code }}">
+          <button class="hdr__currency" type="submit" aria-label="Switch currency to {{ target_currency }}">
+            {{ localization.country.currency.iso_code }}
+          </button>
+        {%- endform -%}
+      {%- endif -%}
+      
+      {%- if section.settings.show_button and settings.header_button_label != blank -%}
+        <a class="btn btn--primary hdr__btn" href="{{ settings.header_button_link | default: '#shop' }}">{{ settings.header_button_label | escape }}</a>
+      {%- endif -%}
+      
+      {%- if shop.customer_accounts_enabled -%}
+        <div class="hdr__account-wrap">
+          <shopify-account class="hdr__account" menu="{{ section.settings.customer_account_menu | default: 'customer-account-main-menu' }}">
+            <span slot="signed-out-avatar" class="hdr__account-guest" aria-hidden="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="8" r="4" fill="currentColor"/>
+                <path d="M 4 20 Q 4 14 12 14 Q 20 14 20 20" fill="currentColor"/>
+              </svg>
+            </span>
+          </shopify-account>
+          {%- if customer -%}
+            {%- assign account_name = customer.first_name | default: customer.name -%}
+            {%- if account_name != blank -%}<span class="hdr__account-name">Hi, {{ account_name | escape }}</span>{%- endif -%}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+      
+      <a class="hdr__icon" href="{{ routes.cart_url }}" aria-label="Cart, {{ cart.item_count }} items">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M 7 4 L 6 10 L 18 10 L 17 4 M 6 10 L 8 20 Q 8 21 9 21 L 15 21 Q 16 21 16 20 L 18 10 M 10 10 V 6 Q 10 4 12 4 Q 14 4 14 6 V 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        {%- if cart.item_count > 0 -%}<span class="hdr__count">{{ cart.item_count }}</span>{%- endif -%}
+      </a>
+    </div>
+  </div>
+  
+  <nav class="wrap hdr__drawer" aria-label="Mobile">
+    {%- for link in section.settings.menu.links -%}
+      <a href="{{ link.url }}">{{ link.title | escape }}</a>
+    {%- endfor -%}
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "div",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu",
+      "info": "Edit in Online Store > Navigation"
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image (optional)"
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "label": "Logo height",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show button",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "customer_account_menu",
+      "label": "Customer account menu",
+      "default": "customer-account-main-menu"
+    }
+  ],
+  "enabled_on": {
+    "groups": ["header"]
+  }
+}
+{% endschema %}
