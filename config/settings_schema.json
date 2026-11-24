@@ -81,10 +81,10 @@
         "default": "Shop VitalCocoa"
       },
       {
-        "type": "url",
+        "type": "text",
         "id": "header_button_link",
         "label": "Header button link",
-        "default": "/#shop"
+        "default": "/collections/all"
       },
       {
         "type": "text",
@@ -147,22 +147,22 @@
         "content": "Pricing & Shipping"
       },
       {
-        "type": "money",
+        "type": "text",
         "id": "product_1_price",
         "label": "Price per tub (1 tub)",
-        "default": "0.00"
+        "default": "$39.99"
       },
       {
-        "type": "money",
+        "type": "text",
         "id": "product_3_price",
-        "label": "Price per tub (3 tubs bundle)",
-        "default": "0.00"
+        "label": "Price per tub (3 tubs)",
+        "default": "$99.99"
       },
       {
-        "type": "money",
+        "type": "text",
         "id": "product_6_price",
-        "label": "Price per tub (6 tubs bundle)",
-        "default": "0.00"
+        "label": "Price per tub (6 tubs)",
+        "default": "$179.99"
       },
       {
         "type": "text",

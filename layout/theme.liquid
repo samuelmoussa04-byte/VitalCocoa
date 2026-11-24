@@ -14,8 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400..800&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
     {{ 'theme.css' | asset_url | stylesheet_tag }}
-    {{ 'theme.js' | asset_url | script_tag: defer: true }}
-    {% block head %}{% endblock %}
+    {{ 'theme.js' | asset_url | script_tag }}
     {{ content_for_header }}
   </head>
   <body class="template-{{ page.template_name | replace: '.', '-' }}">

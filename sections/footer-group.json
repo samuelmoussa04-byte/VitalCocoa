@@ -1,8 +1,10 @@
 {
+  "name": "Footer",
   "type": "footer",
-  "blocks": {
+  "sections": {
     "footer": {
       "type": "footer"
     }
-  }
+  },
+  "order": ["footer"]
 }
