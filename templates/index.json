@@ -3,20 +3,14 @@
     "announcement": {
       "type": "announcement-bar",
       "settings": {
-        "text": "Premium High-Flavanol Cocoa • Ships to US & Canada • Free shipping on orders $75+",
-        "background_color": "#8B4513",
-        "text_color": "#FFFFFF"
+        "text": "Premium High-Flavanol Cocoa • Ships to US & Canada • Free shipping on orders $75+"
       }
     },
     "hero": {
       "type": "hero",
       "settings": {
         "heading": "VitalCocoa",
-        "subheading": "Premium High-Flavanol Cocoa Drink",
-        "description": "Experience the power of premium cocoa. Rich in natural flavanols for daily wellness support.",
-        "cta_text": "Shop Now",
-        "cta_link": "/collections/all",
-        "image_alt": "VitalCocoa Hero"
+        "subheading": "Premium High-Flavanol Cocoa Drink"
       }
     },
     "benefits-strip": {
@@ -58,40 +52,43 @@
     },
     "featured-product": {
       "type": "featured-product",
-      "settings": {
-        "product": "vitalcocoa"
-      }
-    },
-    "about": {
-      "type": "rich-text",
-      "settings": {
-        "heading": "About VitalCocoa",
-        "text": "VitalCocoa is premium high-flavanol cocoa designed for those who want the benefits of natural cocoa compounds. Our cocoa is carefully sourced and processed to maintain the highest flavanol content.",
-        "button_text": "Learn More",
-        "button_link": "/pages/about"
-      }
-    },
-    "why-vitalcocoa": {
-      "type": "rich-text",
-      "settings": {
-        "heading": "Why Choose VitalCocoa?",
-        "text": "High-flavanol cocoa has been studied for its potential health benefits. VitalCocoa provides a convenient way to incorporate premium cocoa into your daily routine.",
-        "button_text": "Science & Research",
-        "button_link": "/pages/science"
-      }
+      "settings": {}
     },
     "faq": {
-      "type": "faq",
+      "type": "faq-accordion",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "title": "What is VitalCocoa?",
+            "content": "VitalCocoa is a premium high-flavanol cocoa drink designed for daily wellness support."
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "title": "How do I use VitalCocoa?",
+            "content": "Simply mix with water, milk, or your favorite beverage. Enjoy daily for best results."
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "title": "Is there a money-back guarantee?",
+            "content": "Yes! We offer a 30-day money-back guarantee if you're not satisfied."
+          }
+        }
+      },
+      "block_order": ["q1", "q2", "q3"],
       "settings": {
         "heading": "Frequently Asked Questions"
       }
     },
-    "newsletter": {
-      "type": "newsletter",
+    "email-capture": {
+      "type": "email-capture",
       "settings": {
         "heading": "Join the VitalCocoa Community",
-        "subheading": "Get exclusive updates, recipes, and wellness tips",
-        "placeholder": "Enter your email"
+        "subheading": "Get exclusive updates and wellness tips"
       }
     }
   },
@@ -100,9 +97,7 @@
     "hero",
     "benefits-strip",
     "featured-product",
-    "about",
-    "why-vitalcocoa",
     "faq",
-    "newsletter"
+    "email-capture"
   ]
 }
