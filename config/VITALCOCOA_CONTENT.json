@@ -1,0 +1,61 @@
+{
+  "store": {
+    "name": "VitalCocoa",
+    "tagline": "Premium High-Flavanol Cocoa Drink",
+    "description": "Experience the power of premium cocoa"
+  },
+  "branding": {
+    "logo_text": "VitalCocoa",
+    "logo_url": "/images/vitalcocoa-logo.png",
+    "favicon": "/images/vitalcocoa-favicon.ico"
+  },
+  "hero": {
+    "heading": "VitalCocoa",
+    "subheading": "Premium High-Flavanol Cocoa Drink",
+    "description": "Experience the power of premium cocoa. Rich in natural flavanols for daily wellness support.",
+    "cta_text": "Shop Now",
+    "cta_link": "/collections/all"
+  },
+  "benefits": [
+    "High in Natural Flavanols",
+    "Premium Quality Cocoa",
+    "Ships to US & Canada",
+    "30-Day Money Back Guarantee",
+    "Available in 1, 3 & 6 Tub Options"
+  ],
+  "products": {
+    "primary": {
+      "name": "VitalCocoa",
+      "description": "Premium high-flavanol cocoa drink",
+      "variants": [
+        {
+          "name": "1-Tub",
+          "sku": "VC-001",
+          "price_usd": "$39.99",
+          "price_cad": "$49.99"
+        },
+        {
+          "name": "3-Tub",
+          "sku": "VC-003",
+          "price_usd": "$99.99",
+          "price_cad": "$129.99"
+        },
+        {
+          "name": "6-Tub",
+          "sku": "VC-006",
+          "price_usd": "$179.99",
+          "price_cad": "$229.99"
+        }
+      ]
+    }
+  },
+  "pages": {
+    "about": "About VitalCocoa and our commitment to quality",
+    "science": "Research and benefits of high-flavanol cocoa",
+    "faq": "Frequently asked questions about VitalCocoa"
+  },
+  "footer": {
+    "company_name": "VitalCocoa",
+    "tagline": "Premium High-Flavanol Cocoa"
+  }
+}

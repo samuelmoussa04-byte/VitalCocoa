@@ -1,37 +1,26 @@
 {
   "current": {
-    "announcement_bar_text": "Every batch lab-tested. Results printed on every tub.",
-    "announcement_bar_text_2": "Free US shipping on orders over ${{FREE_SHIP_THRESHOLD}}.",
-    "flavanol_mg": "500",
-    "caffeine_mg": "12",
-    "servings_per_tub": "30",
-    "free_ship_threshold": "150",
-    "guarantee_days": "60",
-    "guarantee_text": "If VitalCocoa isn't for you, send back any unopened tubs within 60 days for a full refund.",
-    "subscription_discount": "10",
-    "accent_color": "#7A3E26",
-    "accent_deep_color": "#45271D",
-    "text_color": "#2B1A14",
-    "text_muted_color": "#6E5A4C",
-    "page_bg_color": "#F7F1E8",
-    "surface_color": "#FFFCF7",
-    "savings_color": "#C2A15A",
-    "use_display_font": true,
-    "show_currency_switch": true,
-    "show_fda_footnote": true,
-    "header_button_label": "Shop VitalCocoa",
-    "header_button_link": "/#shop",
-    "logo_text_1": "Vital",
-    "logo_text_2": "Cocoa",
-    "footer_wordmark_1": "Vital",
-    "footer_wordmark_2": "Cocoa",
-    "footer_disclaimer": "*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Consult your healthcare provider before use if you are pregnant, nursing, taking medication (including blood thinners or blood pressure medication), or have a medical condition.",
-    "footer_bottom_note": "Ships to the United States and Canada",
-    "product_1_price": "$0.00",
-    "product_3_price": "$0.00",
-    "product_6_price": "$0.00",
-    "exit_intent_enabled": false,
-    "mobile_email_capture_enabled": false
+    "store_name": "VitalCocoa",
+    "store_tagline": "Premium High-Flavanol Cocoa Drink",
+    "colors_primary": "#8B4513",
+    "colors_secondary": "#D4AF37",
+    "colors_accent": "#F5F5DC",
+    "colors_text": "#1a1a1a",
+    "colors_background": "#FFFFFF",
+    "font_heading_family": "sans-serif",
+    "font_body_family": "sans-serif",
+    "show_currency_switcher": true,
+    "show_customer_login": true,
+    "layout_product_columns": 3,
+    "layout_collection_columns": 4,
+    "enable_newsletter": true,
+    "newsletter_title": "Join the VitalCocoa Community",
+    "newsletter_subtitle": "Get updates on our premium cocoa products"
   },
-  "presets": {}
+  "presets": {
+    "Default": {
+      "store_name": "VitalCocoa",
+      "store_tagline": "Premium High-Flavanol Cocoa Drink"
+    }
+  }
 }
