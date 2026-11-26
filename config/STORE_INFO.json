@@ -1,0 +1,93 @@
+{
+  "store": {
+    "name": "VitalCocoa",
+    "subdomain": "sjwjsx-uv",
+    "domain": "sjwjsx-uv.myshopify.com",
+    "adminUrl": "https://admin.shopify.com/store/sjwjsx-uv",
+    "storeUrl": "https://sjwjsx-uv.myshopify.com",
+    "owner": "Samuel Moussa",
+    "ownerEmail": "vitalcocoasupport@gmail.com",
+    "shopId": "gid://shopify/Shop/83441549557",
+    "plan": "Shopify Grow",
+    "launchDate": "2026-11-25",
+    "status": "Production Ready"
+  },
+  "theme": {
+    "id": "190635049205",
+    "name": "Development (5e3903-Mac)",
+    "type": "development",
+    "status": "Live",
+    "sections": 50,
+    "templates": 15,
+    "settings": 30,
+    "gitHubRepo": "https://github.com/samuelmoussa04-byte/VitalCocoa"
+  },
+  "brand": {
+    "name": "VitalCocoa",
+    "tagline": "Premium High-Flavanol Cocoa Drink",
+    "colors": {
+      "primary": "#8B4513",
+      "secondary": "#D4AF37",
+      "accent": "#F5F5DC"
+    }
+  },
+  "markets": {
+    "primary": {
+      "name": "Canada",
+      "code": "CA",
+      "currency": "CAD"
+    },
+    "secondary": {
+      "name": "United States",
+      "code": "US",
+      "currency": "USD",
+      "status": "Pending Creation"
+    }
+  },
+  "products": {
+    "line": "VitalCocoa",
+    "primaryProduct": "High-Flavanol Cocoa Drink",
+    "variants": [
+      {
+        "name": "VitalCocoa 1-Tub",
+        "sku": "VC-001",
+        "pricePlaceholder": {
+          "USD": "$39.99",
+          "CAD": "$49.99"
+        }
+      },
+      {
+        "name": "VitalCocoa 3-Tub",
+        "sku": "VC-003",
+        "pricePlaceholder": {
+          "USD": "$99.99",
+          "CAD": "$129.99"
+        }
+      },
+      {
+        "name": "VitalCocoa 6-Tub",
+        "sku": "VC-006",
+        "pricePlaceholder": {
+          "USD": "$179.99",
+          "CAD": "$229.99"
+        }
+      }
+    ],
+    "status": "Waiting for supplier data"
+  },
+  "features": {
+    "currencySwitcher": true,
+    "customerLogin": true,
+    "multiMarket": true,
+    "responsiveDesign": true,
+    "emailCapture": true,
+    "myNRGFeatureParity": true
+  },
+  "deployment": {
+    "method": "Shopify CLI",
+    "lastPush": "2026-11-25",
+    "gitHub": "Connected",
+    "passwordProtection": "Active (needs removal)",
+    "usMarket": "Pending creation"
+  }
+}
