@@ -1,38 +1,52 @@
 {
   "sections": {
-    "announcement": {
-      "type": "announcement-bar",
-      "settings": {
-        "text": "Premium High-Flavanol Cocoa • Ships to US & Canada"
-      }
-    },
     "hero": {
       "type": "hero",
-      "settings": {
-        "heading": "VitalCocoa",
-        "subheading": "Premium High-Flavanol Cocoa Drink",
-        "description": "Experience the power of premium cocoa"
-      }
+      "blocks": {
+        "stat-1": {
+          "type": "stat",
+          "settings": {
+            "value": "High-Flavanol",
+            "label": "Premium Cocoa"
+          }
+        },
+        "stat-2": {
+          "type": "stat",
+          "settings": {
+            "value": "Natural",
+            "label": "No Additives"
+          }
+        },
+        "stat-3": {
+          "type": "stat",
+          "settings": {
+            "value": "30 days",
+            "label": "money-back guarantee"
+          }
+        }
+      },
+      "block_order": ["stat-1", "stat-2", "stat-3"],
+      "settings": {}
     },
-    "benefits": {
+    "strip": {
       "type": "facts-strip",
       "blocks": {
         "fact-1": {
           "type": "fact",
           "settings": {
-            "text": "High in Natural Flavanols"
+            "text": "Premium High-Flavanol Cocoa"
           }
         },
         "fact-2": {
           "type": "fact",
           "settings": {
-            "text": "Premium Quality Cocoa"
+            "text": "Available in 1, 3 & 6 Tub Options"
           }
         },
         "fact-3": {
           "type": "fact",
           "settings": {
-            "text": "Ships to US & Canada"
+            "text": "Ships to the US & Canada"
           }
         },
         "fact-4": {
@@ -44,29 +58,23 @@
         "fact-5": {
           "type": "fact",
           "settings": {
-            "text": "Available in Multiple Sizes"
+            "text": "Natural Ingredients"
+          }
+        },
+        "fact-6": {
+          "type": "fact",
+          "settings": {
+            "text": "Join the VitalCocoa Community"
           }
         }
       },
-      "block_order": ["fact-1", "fact-2", "fact-3", "fact-4", "fact-5"],
+      "block_order": ["fact-1", "fact-2", "fact-3", "fact-4", "fact-5", "fact-6"],
       "settings": {}
     },
-    "featured": {
+    "featured-product": {
       "type": "featured-product",
       "settings": {}
-    },
-    "email": {
-      "type": "email-capture",
-      "settings": {
-        "heading": "Join the VitalCocoa Community"
-      }
     }
   },
-  "order": [
-    "announcement",
-    "hero",
-    "benefits",
-    "featured",
-    "email"
-  ]
+  "order": ["hero", "strip", "featured-product"]
 }
