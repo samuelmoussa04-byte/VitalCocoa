@@ -3,101 +3,70 @@
     "announcement": {
       "type": "announcement-bar",
       "settings": {
-        "text": "Premium High-Flavanol Cocoa • Ships to US & Canada • Free shipping on orders $75+"
+        "text": "Premium High-Flavanol Cocoa • Ships to US & Canada"
       }
     },
     "hero": {
       "type": "hero",
       "settings": {
         "heading": "VitalCocoa",
-        "subheading": "Premium High-Flavanol Cocoa Drink"
+        "subheading": "Premium High-Flavanol Cocoa Drink",
+        "description": "Experience the power of premium cocoa"
       }
     },
-    "benefits-strip": {
+    "benefits": {
       "type": "facts-strip",
       "blocks": {
-        "benefit-1": {
+        "fact-1": {
           "type": "fact",
           "settings": {
             "text": "High in Natural Flavanols"
           }
         },
-        "benefit-2": {
+        "fact-2": {
           "type": "fact",
           "settings": {
             "text": "Premium Quality Cocoa"
           }
         },
-        "benefit-3": {
+        "fact-3": {
           "type": "fact",
           "settings": {
             "text": "Ships to US & Canada"
           }
         },
-        "benefit-4": {
+        "fact-4": {
           "type": "fact",
           "settings": {
             "text": "30-Day Money Back Guarantee"
           }
         },
-        "benefit-5": {
+        "fact-5": {
           "type": "fact",
           "settings": {
-            "text": "Available in 1, 3 & 6 Tub Options"
+            "text": "Available in Multiple Sizes"
           }
         }
       },
-      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4", "benefit-5"],
+      "block_order": ["fact-1", "fact-2", "fact-3", "fact-4", "fact-5"],
       "settings": {}
     },
-    "featured-product": {
+    "featured": {
       "type": "featured-product",
       "settings": {}
     },
-    "faq": {
-      "type": "faq-accordion",
-      "blocks": {
-        "q1": {
-          "type": "question",
-          "settings": {
-            "title": "What is VitalCocoa?",
-            "content": "VitalCocoa is a premium high-flavanol cocoa drink designed for daily wellness support."
-          }
-        },
-        "q2": {
-          "type": "question",
-          "settings": {
-            "title": "How do I use VitalCocoa?",
-            "content": "Simply mix with water, milk, or your favorite beverage. Enjoy daily for best results."
-          }
-        },
-        "q3": {
-          "type": "question",
-          "settings": {
-            "title": "Is there a money-back guarantee?",
-            "content": "Yes! We offer a 30-day money-back guarantee if you're not satisfied."
-          }
-        }
-      },
-      "block_order": ["q1", "q2", "q3"],
-      "settings": {
-        "heading": "Frequently Asked Questions"
-      }
-    },
-    "email-capture": {
+    "email": {
       "type": "email-capture",
       "settings": {
-        "heading": "Join the VitalCocoa Community",
-        "subheading": "Get exclusive updates and wellness tips"
+        "heading": "Join the VitalCocoa Community"
       }
     }
   },
   "order": [
     "announcement",
     "hero",
-    "benefits-strip",
-    "featured-product",
-    "faq",
-    "email-capture"
+    "benefits",
+    "featured",
+    "email"
   ]
 }
